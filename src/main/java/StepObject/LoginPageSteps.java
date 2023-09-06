@@ -22,7 +22,7 @@ public class LoginPageSteps extends LoginPage {
         return this;
     }
 
-    @Step("რეგისტრაციის ღილაკზე დაჭერა")
+    @Step("შესვლის ღილაკზე დაჭერა")
     public LoginPageSteps ClickLoginButton() {
         logInButton.click();
         return this;
