@@ -2,18 +2,19 @@ package Utils;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
+
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class ChromeRunner {
-    @BeforeMethod (description = "ბრაუზერის გამართვა და გახსნა")
+    @BeforeMethod
+            (description = "ბრაუზერის გამართვა და გახსნა")
     public void setup() {
-        open("https://upway.ge/");
+        open("https://megatechnica.ge/ge");
         Configuration.browserSize = "1920x1080";
-        sleep(5000);
+        Configuration.pageLoadTimeout = 5000;
     }
 
     @AfterMethod(description = "ქეშის გასუფთავება და ბრაუზერის დახურვა")

@@ -1,12 +1,15 @@
 package StepObject;
 
 import PageObject.LoginPage;
+import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 
+import java.time.Duration;
+
 public class LoginPageSteps extends LoginPage {
-    @Step("შესვლის გვერდზე გადასვლა")
-    public LoginPageSteps GoToLoginPage() {
-        logInButton.click();
+    @Step("ჩემ პროფილზე გვერდზე გადასვლა")
+    public LoginPageSteps goToMyProfile() {
+        myProfile.click();
         return this;
     }
 
@@ -23,8 +26,27 @@ public class LoginPageSteps extends LoginPage {
     }
 
     @Step("შესვლის ღილაკზე დაჭერა")
-    public LoginPageSteps ClickLoginButton() {
-        logInButton.click();
+    public LoginPageSteps clickLoginButton() {
+        getLogInButton.click();
         return this;
     }
+
+    @Step("ერორ მესიჯის წამოღება")
+    public String getErrorMessage() {
+        errorMessage.shouldBe(Condition.visible, Duration.ofSeconds(3));
+        return errorMessage.getText();
+    }
+
+    @Step("პროფილის იმეილის წამოღება")
+    public String getProfileEmailAddress() {
+        myProfileInfo.shouldBe(Condition.visible, Duration.ofSeconds(3));
+        return myProfileInfo.getText();
+    }
+
+    @Step("ჩემი პროფილის გვერდზე გადასვლა")
+    public LoginPageSteps goToMyProfileAfterLogIn() {
+        myProfileAfterLogIn.click();
+        return this;
+    }
+
 }
