@@ -1,10 +1,13 @@
 import StepObject.ProductPageSteps;
 import Utils.ChromeRunner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
 import static DataObject.ProductPageData.*;
 
 public class ProductPageTest extends ChromeRunner {
@@ -13,6 +16,7 @@ public class ProductPageTest extends ChromeRunner {
 
     @Test
     @Description("მობილურების გაფილტვრა ფასით და ფასების მნისვნელობის მიღება")
+    @Severity(SeverityLevel.NORMAL)
     public void ProductPage() {
         filter
                 .searchInput()
@@ -26,7 +30,8 @@ public class ProductPageTest extends ChromeRunner {
 
     @Test
     @Description("მხოლოდ სამსუნგის მონაცემების წამოღება")
-    public void SamsungProducts(){
+    @Severity(SeverityLevel.NORMAL)
+    public void SamsungProducts() {
         filter
                 .searchInput()
                 .printText(searchText)

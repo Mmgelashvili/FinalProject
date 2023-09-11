@@ -42,17 +42,12 @@ public class AddToBagSteps extends AddToBagPage {
         return totalProduct.getText();
     }
 
-    @Step("delete added prodict")
+    @Step("დამატებული პროდუქტის წაშლა")
     public AddToBagSteps deleteAddedProduct() {
         deleteProduct.click();
         return this;
     }
 
-   /* @Step("კალათაში გადასვლა")
-    public AddToBagSteps goToBag() {
-        bagButton.click();
-        return this;
-    } */
 
    @Step ()
     public String getProductTotalPrice() {

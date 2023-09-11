@@ -7,7 +7,7 @@ import io.qameta.allure.Step;
 import java.time.Duration;
 
 public class LoginPageSteps extends LoginPage {
-    @Step("ჩემ პროფილზე გვერდზე გადასვლა")
+    @Step("ჩემი პროფილის რილაკზე დაკლიკება")
     public LoginPageSteps goToMyProfile() {
         myProfile.click();
         return this;

@@ -48,7 +48,6 @@ public class ProductPageSteps extends ProductPage {
         return this;
     }
 
-
     @Step("სამსუნგის დაფილტვრა")
     public ProductPageSteps checkSamsung() {
         samsungCheckBox.click();

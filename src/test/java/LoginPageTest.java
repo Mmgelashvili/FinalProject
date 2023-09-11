@@ -1,5 +1,7 @@
 import StepObject.LoginPageSteps;
 import Utils.ChromeRunner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,6 +14,7 @@ public class LoginPageTest extends ChromeRunner {
 
     @Test
     @Description("პოზიტიული დალოგინების სცენარი")
+    @Severity(SeverityLevel.CRITICAL)
     public void logIn() {
         logIn
                 .goToMyProfile()
@@ -25,6 +28,7 @@ public class LoginPageTest extends ChromeRunner {
 
     @Test
     @Description("ნეგატიური დალოგინების სცენარი")
+    @Severity(SeverityLevel.MINOR)
     public void incorrectLogIn() {
         inCorrectLogIn
                 .goToMyProfile()

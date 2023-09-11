@@ -1,5 +1,7 @@
 import StepObject.AddToBagSteps;
 import Utils.ChromeRunner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -11,6 +13,7 @@ public class AddToBagTest extends ChromeRunner {
 
     @Test(priority = 1)
     @Description("ნივთის კალათაში დამატება")
+    @Severity(SeverityLevel.MINOR)
     public void bagList() {
         bagList
                 .printMyText(myProduct)
@@ -22,6 +25,7 @@ public class AddToBagTest extends ChromeRunner {
 
     @Test(priority = 2)
     @Description("კალათასი არსებული ნივთის შემოწმება")
+    @Severity(SeverityLevel.MINOR)
     public void buscetInfo() {
         bagList
                 .youAreOnCartPage()
@@ -31,6 +35,7 @@ public class AddToBagTest extends ChromeRunner {
 
     @Test(priority = 3)
     @Description("ნივთის წაშლა კალათიდან")
+    @Severity(SeverityLevel.MINOR)
     public void increaseQuantity() {
         bagList
                 .deleteAddedProduct();
