@@ -11,10 +11,8 @@ public class AddToBagPage {
             searchText = $("#searchkey"),
             goToSearchButton = $(byName("submit")),
             goToMobilePage = $$(".img_link").first(),
-
-    addToBag = $(".add_to_bag"),
+            addToBag = $(".add_to_bag"),
             deleteProduct = $(".delete"),
-            bagButton = $(".bag"),
             myCart = $(".cart"),
             totalProduct = $(".total"),
             productTotalPrice = $(byXpath("//div[@class = 'total']//span")),
