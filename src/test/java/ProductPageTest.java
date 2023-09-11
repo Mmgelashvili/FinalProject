@@ -2,6 +2,8 @@ import StepObject.ProductPageSteps;
 import Utils.ChromeRunner;
 import jdk.jfr.Description;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import static DataObject.ProductPageData.*;
 
@@ -23,16 +25,14 @@ public class ProductPageTest extends ChromeRunner {
     }
 
     @Test
-    @Description("მობილურების გაფილტვრა ფასით და არასწორი ფასის გადაცემა")
-    public void ProductPageSecond(){
-        getCheaperProduct
-
+    @Description("მხოლოდ სამსუნგის მონაცემების წამოღება")
+    public void SamsungProducts(){
+        filter
                 .searchInput()
                 .printText(searchText)
-                .clickSearchButton()
-                .clicklowestPrice(lowPrice)
-                .clickmaxPrice(maximumPrice)
-                .getcheaperproduct(myPrice);
-
+                .clickSearchButton();
+        getCheaperProduct
+                .checkSamsung()
+                .getProductNames();
     }
 }

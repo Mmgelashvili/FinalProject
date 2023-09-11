@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class ChromeRunner {
-    @BeforeMethod
+    @BeforeClass
             (description = "ბრაუზერის გამართვა და გახსნა")
     public void setup() {
         open("https://megatechnica.ge/ge");
@@ -17,7 +17,7 @@ public class ChromeRunner {
         Configuration.pageLoadTimeout = 5000;
     }
 
-    @AfterMethod(description = "ქეშის გასუფთავება და ბრაუზერის დახურვა")
+    @AfterClass(description = "ქეშის გასუფთავება და ბრაუზერის დახურვა")
     public void tearDown() {
         Selenide.clearBrowserCookies();
         Selenide.clearBrowserLocalStorage();

@@ -10,7 +10,7 @@ public interface ProductPageData {
             searchText = "სმარტფონი";
     int lowPrice = 2000;
     int maximumPrice = 2500;
-    int myPrice = 1600;
+
 }
 
 

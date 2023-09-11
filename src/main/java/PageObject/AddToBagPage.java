@@ -2,8 +2,7 @@ package PageObject;
 
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Selectors.byAttribute;
-import static com.codeborne.selenide.Selectors.byName;
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class AddToBagPage {
@@ -11,10 +10,13 @@ public class AddToBagPage {
 
             searchText = $("#searchkey"),
             goToSearchButton = $(byName("submit")),
-            goToMobilePage= $(byName("itemListElement")),
+            goToMobilePage = $$(".img_link").first(),
 
-            addToBag = $(byName("add_to_bag")),
-            buyButton = $(byName("buy")),
-            addMoreProduct = $(byAttribute("Name", "quantity")),
-            bagButton = $("#bag");
+    addToBag = $(".add_to_bag"),
+            deleteProduct = $(".delete"),
+            bagButton = $(".bag"),
+            myCart = $(".cart"),
+            totalProduct = $(".total"),
+            productTotalPrice = $(byXpath("//div[@class = 'total']//span")),
+            productCheckoutPrice = $(byXpath("//div[@class = 'prices']//span[@class = 'price']"));
 }

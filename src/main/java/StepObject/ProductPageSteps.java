@@ -4,6 +4,7 @@ import PageObject.ProductPage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import org.testng.Assert;
 
 import java.time.Duration;
 
@@ -47,9 +48,19 @@ public class ProductPageSteps extends ProductPage {
         return this;
     }
 
-    @Step("დაფილტრულზე დაბალი ფასის გადაცემა")
-    public ProductPageSteps getcheaperproduct(int myPrice) {
-        myExactPrice.click();
+
+    @Step("სამსუნგის დაფილტვრა")
+    public ProductPageSteps checkSamsung() {
+        samsungCheckBox.click();
+        return this;
+    }
+
+    @Step("სახელის შემოწმება")
+    public ProductPageSteps getProductNames() {
+        for (int i = 0; i < productDescription.size(); i++) {
+            String elementText = productDescription.get(i).getText();
+            Assert.assertTrue(elementText.contains("Samsung"));
+        }
         return this;
     }
 
