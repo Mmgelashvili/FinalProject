@@ -15,7 +15,7 @@ public class ProductPageTest extends ChromeRunner {
     ProductPageSteps getCheaperProduct = new ProductPageSteps();
 
     @Test
-    @Description("მობილურების გაფილტვრა ფასით და ფასების მნისვნელობის მიღება")
+    @Description("მობილურების გაფილტვრა ფასით")
     @Severity(SeverityLevel.NORMAL)
     public void ProductPage() {
         filter
@@ -37,7 +37,7 @@ public class ProductPageTest extends ChromeRunner {
                 .printText(searchText)
                 .clickSearchButton();
         getCheaperProduct
-                .checkSamsung()
+                .checkSamsung(myMobile)
                 .getProductNames();
     }
 }

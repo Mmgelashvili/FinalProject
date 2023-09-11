@@ -29,13 +29,13 @@ public class ProductPageSteps extends ProductPage {
 
     @Step("მინიმალური ფასის გაფილტვრა")
     public ProductPageSteps clicklowestPrice(int lowPrice) {
-        slaiderMin.shouldBe(Condition.visible, Duration.ofSeconds(10)).setValue(String.valueOf(lowPrice));
+        slaiderMin.shouldBe(Condition.visible, Duration.ofSeconds(5)).setValue(String.valueOf(lowPrice));
         return this;
     }
 
     @Step("მაქსიმალური ფასის გაფილტვრა")
     public ProductPageSteps clickmaxPrice(int maximumPrice) {
-        slaiderMax.shouldBe(Condition.visible, Duration.ofSeconds(10)).setValue(String.valueOf(maximumPrice));
+        slaiderMax.shouldBe(Condition.visible, Duration.ofSeconds(5)).setValue(String.valueOf(maximumPrice));
         return this;
     }
 
@@ -49,7 +49,7 @@ public class ProductPageSteps extends ProductPage {
     }
 
     @Step("სამსუნგის დაფილტვრა")
-    public ProductPageSteps checkSamsung() {
+    public ProductPageSteps checkSamsung(String myMobile) {
         samsungCheckBox.click();
         return this;
     }

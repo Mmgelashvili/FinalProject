@@ -7,7 +7,8 @@ import static com.codeborne.selenide.Selenide.$;
 
 public interface ProductPageData {
     String
-            searchText = "სმარტფონი";
+            searchText = "სმარტფონი",
+            myMobile = "Samsung";
     int lowPrice = 2000;
     int maximumPrice = 2500;
 

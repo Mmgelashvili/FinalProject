@@ -24,7 +24,7 @@ public class AddToBagTest extends ChromeRunner {
     }
 
     @Test(priority = 2)
-    @Description("კალათასი არსებული ნივთის შემოწმება")
+    @Description("კალათში არსებული ნივთის შემოწმება")
     @Severity(SeverityLevel.MINOR)
     public void buscetInfo() {
         bagList
@@ -41,6 +41,4 @@ public class AddToBagTest extends ChromeRunner {
                 .deleteAddedProduct();
         Assert.assertTrue(bagList.getTotalText().contains("სულ (0 ნივთი)"));
     }
-
-
 }
